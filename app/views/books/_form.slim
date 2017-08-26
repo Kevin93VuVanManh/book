@@ -1,0 +1,40 @@
+= simple_form_for @book, html: {class: "form-horizontal"} do |f|
+  .my-5
+    .col-sm-12.form-control
+      .container
+        .h2
+          = "本の作成"
+        .my-4
+          .form-group
+            = f.label :title, "Title: ", class: "control-label col-sm-2"
+            .col-sm-10
+              = f.text_field :title, class: "form-control", placeholder: "Enter email"
+          .form-group
+            = f.label :title, "Url: ", class: "control-label col-sm-2"
+            .col-sm-10
+              = f.text_field :url, class: "form-control", placeholder: "Enter url"
+          .form-group
+            = fields_for :author do |author|
+              .form-group
+                = author.label :name, "Author Name: ", class: "control-label col-sm-2"
+              .col-sm-10
+                = author.text_field :name, class: "form-control", placeholder: "Enter name"
+          .form-group
+            = fields_for :memo do |memo|
+              .form-group
+                = memo.label :memo_1, "Description 1: ", class: "control-label col-sm-2"
+              .col-sm-10
+                = memo.text_field :memo_1, class: "form-control", placeholder: "Enter Description"      
+              .form-group
+                = memo.label :memo_2, "Description 2: ", class: "control-label col-sm-2"
+              .col-sm-10
+                = memo.text_field :memo_2, class: "form-control", placeholder: "Enter Description"      
+              .form-group
+                = memo.label :memo_3, "Description 3: ", class: "control-label col-sm-2"
+              .col-sm-10
+                = memo.text_field :memo_3, class: "form-control", placeholder: "Enter Description"      
+          .form-group 
+            .col-sm-offset-2.col-sm-10
+              button type="submit" class="btn btn-default"
+                = "ほぞん"
+          

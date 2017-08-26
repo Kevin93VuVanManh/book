@@ -1,0 +1,16 @@
+.div
+  p 
+    = "NOTICE"
+  p
+    strong
+      = "Title"
+    = @note.title
+  
+  p
+    strong
+      = "Text"
+    = convert_text
+    
+  = link_to "Edit", edit_note_path(@note)
+  = link_to "Back", notes_path
+  
